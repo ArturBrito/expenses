@@ -12,10 +12,8 @@
     "test:staged": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage",
     "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info",
-    "start:api": "nodemon src/api/server.ts"
-  },
-  "_moduleAliases": {
-    "@": "dist"
+    "dev:api": "nodemon -r module-alias/register src/api/server.ts",
+    "start:api": "node -r module-alias/register dist/api/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -41,7 +39,6 @@
     "rimraf": "^3.0.2",
     "ts-jest": "^28.0.3",
     "ts-node": "^10.9.1",
-    "tsconfig-paths": "^4.0.0",
     "typescript": "^4.7.2"
   },
   "husky": {

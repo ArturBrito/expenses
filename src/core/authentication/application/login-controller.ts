@@ -10,7 +10,7 @@ export class LoginController implements Controller {
     ) { }
 
     async exec(request: LoginController.Request): Promise<HttpResponse> {
-
+        
         try {
             const error = this.validation.validate(request);
 

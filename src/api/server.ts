@@ -1,5 +1,10 @@
 //import 'module-alias/register'
 
+import ModuleAlias from 'module-alias';
+ModuleAlias.addAliases({
+    '@': __dirname + '/../'
+  });
+
 import env from './config/env';
 import { setupApp } from './config/app'
 
