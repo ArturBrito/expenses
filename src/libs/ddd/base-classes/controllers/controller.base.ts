@@ -1,5 +1,6 @@
-import { ControllerRequest, ControllerResponse } from './';
+import { ControllerRequest } from './';
+import { HttpResponse } from './controller-response';
 
-export interface Controller {
-  handle(controllerRequest: ControllerRequest): Promise<ControllerResponse>;
+export interface Controller<T = any> {
+  exec(request: T): Promise<HttpResponse>;
 }

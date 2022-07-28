@@ -1,7 +1,4 @@
-export interface ControllerResponse {
-  body: any;
-}
-
-export interface ControllerHttpResponse extends ControllerResponse {
-  statusCode: number;
+export interface HttpResponse {
+  statusCode: number
+  body: any
 }
