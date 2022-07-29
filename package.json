@@ -13,6 +13,7 @@
     "test:ci": "npm test -- --coverage",
     "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info",
     "dev:api": "nodemon -r module-alias/register src/api/server.ts",
+    "dev:bootstrap": "nodemon -r module-alias/register src/menu/index.ts",
     "start:api": "node -r module-alias/register dist/api/server.js"
   },
   "author": "",

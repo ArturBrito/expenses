@@ -1,4 +1,3 @@
-import { ControllerRequest } from './';
 import { HttpResponse } from './controller-response';
 
 export interface Controller<T = any> {
