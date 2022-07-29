@@ -14,17 +14,17 @@ export class Menu {
     this.menuItems.push(item);
   }
 
-  printTitle() {
+  printTitle(): void {
     this.printSeparator();
     console.log(this.title);
     this.printSeparator();
   }
 
-  printSeparator() {
+  printSeparator(): void {
     console.log(this.separator);
   }
 
-  async exec() {
+  async exec(): Promise<void> {
     console.clear();
 
     this.printTitle();

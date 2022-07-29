@@ -1,5 +1,5 @@
 import { ConsoleController } from "@/libs/ddd/base-classes/controllers/console-controller";
-import { Menu } from "../config/menu";
+import { Menu } from "../domain/menu";
 
 
 export type MenuItem = {
