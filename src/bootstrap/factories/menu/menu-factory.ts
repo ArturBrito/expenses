@@ -1,6 +1,7 @@
 import { Exit } from '@/bootstrap/application/system/exit-controller';
 import { RlInputReader } from '@/libs/ddd/base-classes/menu/application/rl-input-reader';
 import { Menu } from '@/libs/ddd/base-classes/menu/domain/menu';
+import { usersBootstrapFactory } from '../users/users-factory';
 
 const inputReader = new RlInputReader();
 
@@ -11,9 +12,10 @@ mainMenu.addItem({
   callback: new Exit(),
 });
 mainMenu.addItem({
-    option: 1,
-    text: 'Users'
-})
+  option: 1,
+  text: 'Users',
+  callback: usersBootstrapFactory(),
+});
 
 /*
 -- For new menu from main
