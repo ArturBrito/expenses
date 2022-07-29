@@ -33,7 +33,7 @@ export class Menu {
 
     if (selected <= this.menuItems.length - 1) {
       if (this.menuItems[selected].callback) {
-        return await this.menuItems[selected].callback.exec({});
+        return await this.menuItems[selected].callback.exec();
       }
     }
     return this.exec();
