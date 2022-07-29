@@ -1,10 +1,11 @@
 import { prismaClient } from "@/core/infrastructure/db/prisma-helper";
 import { LoadAccountByEmailRepository } from "../../contracts/db/load-account-by-email-repository";
 import { LoadTokenByIdRepository } from "../../contracts/db/load-token-by-id-repository";
+import { RemoveAllUsersRepository } from "../../contracts/db/remove-all-users-repository";
 import { SaveRefreshTokenRepository } from "../../contracts/db/save-refresh-token-repository";
 
 
-export class AccountPrismaRepository implements LoadAccountByEmailRepository, SaveRefreshTokenRepository, LoadTokenByIdRepository {
+export class AccountPrismaRepository implements LoadAccountByEmailRepository, SaveRefreshTokenRepository, LoadTokenByIdRepository, RemoveAllUsersRepository {
 
     async loadByEmail(email: string): Promise<LoadAccountByEmailRepository.Result> {
         const user = await prismaClient.user.findUnique({
@@ -63,6 +64,10 @@ export class AccountPrismaRepository implements LoadAccountByEmailRepository, Sa
             refreshToken: refreshToken.refresh_token
         }
 
+    }
+
+    async removeAllUsers(): Promise<void> {
+        await prismaClient.user.deleteMany({})
     }
 
 }
