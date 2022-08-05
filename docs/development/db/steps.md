@@ -12,6 +12,13 @@
 
 <br><br>
 
-## Every time
+## Setup to run everytime
 1. Start the docker
 > docker-compose up 
+
+
+<br><br>
+
+## Bootstrap users
+> npm run dev:bootstrap  
+> Select option Users

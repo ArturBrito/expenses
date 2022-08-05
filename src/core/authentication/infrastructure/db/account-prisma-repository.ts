@@ -1,12 +1,13 @@
 import { prismaClient } from "@/core/infrastructure/db/prisma-helper";
+import { CreateUserRepository } from "../../contracts/db/create-user-repository";
 import { LoadAccountByEmailRepository } from "../../contracts/db/load-account-by-email-repository";
 import { LoadTokenByIdRepository } from "../../contracts/db/load-token-by-id-repository";
 import { RemoveAllUsersRepository } from "../../contracts/db/remove-all-users-repository";
 import { SaveRefreshTokenRepository } from "../../contracts/db/save-refresh-token-repository";
 
 
-export class AccountPrismaRepository implements LoadAccountByEmailRepository, SaveRefreshTokenRepository, LoadTokenByIdRepository, RemoveAllUsersRepository {
-
+export class AccountPrismaRepository implements LoadAccountByEmailRepository, SaveRefreshTokenRepository, LoadTokenByIdRepository, RemoveAllUsersRepository, CreateUserRepository {
+    
     async loadByEmail(email: string): Promise<LoadAccountByEmailRepository.Result> {
         const user = await prismaClient.user.findUnique({
             where: {
@@ -68,6 +69,16 @@ export class AccountPrismaRepository implements LoadAccountByEmailRepository, Sa
 
     async removeAllUsers(): Promise<void> {
         await prismaClient.user.deleteMany({})
+    }
+
+    async createUser(name: string, email: string, password: string): Promise<void>{
+        await prismaClient.user.create({
+            data: {
+              name: name,
+              email: email,
+              password: password
+            },
+          })
     }
 
 }
