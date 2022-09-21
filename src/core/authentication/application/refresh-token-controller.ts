@@ -12,6 +12,7 @@ export class RefreshTokenController implements Controller {
 
     async exec(request: any): Promise<HttpResponse> {
         try {
+            
             const error = this.validation.validate(request)
             if (error) {
                 return badRequest(error)

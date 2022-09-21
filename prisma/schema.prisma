@@ -13,6 +13,7 @@ model User {
   email    String @unique @db.VarChar(50)
   password String @db.VarChar(200)
   logins Login[]
+  accounts Account[]
 }
 
 model Login{
@@ -20,4 +21,20 @@ model Login{
   user User @relation(fields: [user_id], references: [user_id])
   user_id Int  @unique
   refresh_token String @db.VarChar(200)
+}
+
+model Account{
+  account_id  Int    @id @default(autoincrement())
+  user User @relation(fields: [user_id], references: [user_id])
+  user_id Int
+  account_name String @db.VarChar(50)
+  balance Float
+  movements Movement[]
+}
+
+model Movement{
+  account Account @relation(fields: [account_id], references: [account_id])
+  account_id Int @unique
+  date DateTime   @default(now())
+  value Int
 }
