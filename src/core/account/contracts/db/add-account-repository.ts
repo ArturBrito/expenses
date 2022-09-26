@@ -1,12 +1,10 @@
+import { AccountManager } from "../account-manager"
+
 export interface AddAccountRepository{
-    add(request: AddAccountRepository.Request): Promise<void>
+    addAccount(request: AddAccountRepository.Request): Promise<void>
 }
 
 export namespace AddAccountRepository {
-    export type Request = {
-      userId: number;
-      accountName: string;
-      balance: number;
-    };
+    export type Request = AccountManager.AddRequest
   }
   

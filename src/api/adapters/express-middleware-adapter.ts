@@ -9,8 +9,10 @@ export const adaptMiddleware = (middleware: Middleware) => {
       ...(req.headers || {}),
     };
     const httpResponse = await middleware.exec(request);
+    
     if (httpResponse.statusCode === 200) {
       Object.assign(req.body, httpResponse.body);
+      
       next();
     } else {
       res.status(httpResponse.statusCode).json({

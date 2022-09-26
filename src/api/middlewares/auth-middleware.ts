@@ -15,6 +15,7 @@ export class AuthMiddleware implements Middleware {
   async exec(request: AuthMiddleware.Request): Promise<HttpResponse> {
     try {
       const { accessToken } = request;
+      
       if (accessToken) {
         const decryptedToken = await this.decrypter.decrypt(accessToken);
 

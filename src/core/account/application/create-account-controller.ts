@@ -31,7 +31,7 @@ export class CreateAccountController implements Controller {
         return forbidden(new AccessDeniedError());
       }
 
-      await this.accountManager.add(request);
+      await this.accountManager.addAccount(request);
 
     
       return ok('Account added');
