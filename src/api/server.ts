@@ -8,9 +8,10 @@ ModuleAlias.addAliases({
 import env from './config/env';
 import { setupApp } from './config/app';
 
+const PORT = process.env.PORT || env.port
 setupApp()
   .then((app) => {
-    app.listen(env.port, () =>
+    app.listen(PORT, () =>
       console.log(`Server running at http://localhost:${env.port}`)
     );
   })

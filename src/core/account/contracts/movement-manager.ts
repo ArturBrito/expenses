@@ -1,11 +1,19 @@
 export interface MovementManager {
-  addMovement(request: MovementManager.Request): Promise<boolean>;
+  addMovement(request: MovementManager.AddMovementRequest): Promise<boolean>;
+  removeMovement(
+    request: MovementManager.RemoveMovementRequest
+  ): Promise<boolean>;
 }
 
 export namespace MovementManager {
-  export type Request = {
-    userId: number,
-    accountId: number,
-    value: number
-  }
+  export type AddMovementRequest = {
+    userId: number;
+    accountId: number;
+    value: number;
+  };
+  export type RemoveMovementRequest = {
+    userId: number;
+    accountId: number;
+    movementId: number;
+  };
 }

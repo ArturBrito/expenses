@@ -4,7 +4,7 @@ import { ValidationComposite } from "@/libs/ddd/base-classes/validators/validati
 
 export const makeCreateAccountValidation = (): ValidationComposite => {
     const validations: Validation[] = [];
-    for (const field of ['userId', 'accountName', 'balance']) {
+    for (const field of ['userId', 'accountName']) {
         validations.push(new RequiredFieldValidation(field))
     }
     

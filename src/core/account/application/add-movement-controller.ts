@@ -23,12 +23,12 @@ export class AddMovementController implements Controller {
       }
 
       const movementAdded = await this.movementManager.addMovement(request);
+      console.log(movementAdded)
 
       if (!movementAdded) {
         return unauthorized();
       }
 
-      // descontar saldo na conta
 
       return ok('Movement added');
     } catch (e) {

@@ -8,7 +8,7 @@ import { makeCreateAccountValidation } from './create-account-validator';
 export const makeCreateAccountController = (): Controller => {
   const userPrismaRepository = new UserPrismaRepository();
   const accountPrismaRepository = new AccountPrismaRepository();
-  const accountManager = new DbAccountManager(accountPrismaRepository, accountPrismaRepository);
+  const accountManager = new DbAccountManager(accountPrismaRepository, accountPrismaRepository, accountPrismaRepository);
   const controller = new CreateAccountController(
     makeCreateAccountValidation(),
     userPrismaRepository,
