@@ -1,6 +1,6 @@
 import { Exit } from '@/bootstrap/application/system/exit-controller';
-import { RlInputReader } from '@/libs/ddd/base-classes/menu/application/rl-input-reader';
-import { Menu } from '@/libs/ddd/base-classes/menu/domain/menu';
+import { RlInputReader } from '@/libs/menu/application/rl-input-reader';
+import { Menu } from '@/libs/menu/domain/menu';
 import { usersBootstrapFactory } from '../users/users-factory';
 
 const inputReader = new RlInputReader();

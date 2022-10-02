@@ -1,4 +1,4 @@
-import { Middleware } from '@/libs/ddd/base-classes/protocols/middleware';
+import { Middleware } from '@/libs/protocols/middleware';
 import { NextFunction, Request, Response } from 'express';
 
 export const adaptMiddleware = (middleware: Middleware) => {

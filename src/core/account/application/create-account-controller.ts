@@ -1,13 +1,13 @@
 import { GetUser } from '@/core/authentication/contracts/get-user';
 import { Validation } from '@/core/authentication/contracts/validation';
-import { Controller, HttpResponse } from '@/libs/ddd/base-classes/controllers';
-import { AccessDeniedError } from '@/libs/ddd/base-classes/errors/access-denied-error';
+import { Controller, HttpResponse } from '@/libs/controllers';
+import { AccessDeniedError } from '@/libs/errors/access-denied-error';
 import {
   badRequest,
   forbidden,
   ok,
   serverError,
-} from '@/libs/ddd/base-classes/helpers/http-helper';
+} from '@/libs/helpers/http-helper';
 import { AccountManager } from '../contracts/account-manager';
 
 export class CreateAccountController implements Controller {

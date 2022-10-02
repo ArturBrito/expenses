@@ -2,7 +2,7 @@ import { CreateAccountController } from '@/core/account/application/create-accou
 import { DbAccountManager } from '@/core/account/infrastructure/db-account-manager';
 import { AccountPrismaRepository } from '@/core/account/infrastructure/db/account-prisma-repository';
 import { UserPrismaRepository } from '@/core/authentication/infrastructure/db/user-prisma-repository';
-import { Controller } from '@/libs/ddd/base-classes/controllers';
+import { Controller } from '@/libs/controllers';
 import { makeCreateAccountValidation } from './create-account-validator';
 
 export const makeCreateAccountController = (): Controller => {

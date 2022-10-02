@@ -1,6 +1,6 @@
 import { Validation } from "@/core/authentication/contracts/validation";
-import { RequiredFieldValidation } from "@/libs/ddd/base-classes/validators/required-filed-validation";
-import { ValidationComposite } from "@/libs/ddd/base-classes/validators/validation-composite";
+import { RequiredFieldValidation } from "@/libs/validators/required-filed-validation";
+import { ValidationComposite } from "@/libs/validators/validation-composite";
 
 export const makeCreateAccountValidation = (): ValidationComposite => {
     const validations: Validation[] = [];

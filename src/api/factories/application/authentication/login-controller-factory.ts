@@ -1,5 +1,5 @@
 import { LoginController } from "@/core/authentication/application/login-controller"
-import { Controller } from "@/libs/ddd/base-classes/controllers"
+import { Controller } from "@/libs/controllers"
 import { makeDbAuthentication } from "./db-authentication-factory"
 import { makeLoginValidation } from "./login-validation-factory"
 

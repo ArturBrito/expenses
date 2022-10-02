@@ -1,4 +1,4 @@
-import { Controller } from "@/libs/ddd/base-classes/controllers"
+import { Controller } from "@/libs/controllers"
 
 import { Request, Response } from 'express'
 

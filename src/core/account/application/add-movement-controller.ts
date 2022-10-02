@@ -1,11 +1,11 @@
 import { Validation } from '@/core/authentication/contracts/validation';
-import { Controller, HttpResponse } from '@/libs/ddd/base-classes/controllers';
+import { Controller, HttpResponse } from '@/libs/controllers';
 import {
   badRequest,
   ok,
   serverError,
   unauthorized,
-} from '@/libs/ddd/base-classes/helpers/http-helper';
+} from '@/libs/helpers/http-helper';
 import { MovementManager } from '../contracts/movement-manager';
 
 export class AddMovementController implements Controller {

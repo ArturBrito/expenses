@@ -1,13 +1,13 @@
 import { Decrypter } from '@/core/authentication/contracts/cryptography/decrypter';
-import { HttpResponse } from '@/libs/ddd/base-classes/controllers';
-import { AccessDeniedError } from '@/libs/ddd/base-classes/errors/access-denied-error';
+import { HttpResponse } from '@/libs/controllers';
+import { AccessDeniedError } from '@/libs/errors/access-denied-error';
 import {
   forbidden,
   ok,
   serverError,
   unauthorized,
-} from '@/libs/ddd/base-classes/helpers/http-helper';
-import { Middleware } from '@/libs/ddd/base-classes/protocols/middleware';
+} from '@/libs/helpers/http-helper';
+import { Middleware } from '@/libs/protocols/middleware';
 
 export class AuthMiddleware implements Middleware {
   constructor(private readonly decrypter: Decrypter) {}

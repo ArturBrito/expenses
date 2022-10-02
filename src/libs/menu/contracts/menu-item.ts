@@ -1,4 +1,4 @@
-import { ConsoleController } from "@/libs/ddd/base-classes/controllers/console-controller";
+import { ConsoleController } from "@/libs/controllers/console-controller";
 import { Menu } from "../domain/menu";
 
 

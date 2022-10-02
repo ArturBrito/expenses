@@ -1,6 +1,6 @@
 import { LoginController } from "@/core/authentication/application/login-controller"
 import { Authentication } from '@/core/authentication/contracts/authentication'
-import { badRequest, serverError, unauthorized } from "@/libs/ddd/base-classes/helpers/http-helper";
+import { badRequest, serverError, unauthorized } from "@/libs/helpers/http-helper";
 import { faker } from '@faker-js/faker';
 import { ok } from "assert";
 import { Validation } from "../contracts/validation";

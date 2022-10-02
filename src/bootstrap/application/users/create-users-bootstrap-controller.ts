@@ -1,6 +1,6 @@
 import { UserCreater } from '@/core/authentication/contracts/user-creater';
 import { UsersRemover } from '@/core/authentication/contracts/users-remover';
-import { ConsoleController } from '@/libs/ddd/base-classes/controllers/console-controller';
+import { ConsoleController } from '@/libs/controllers/console-controller';
 
 import * as readline from 'readline';
 let rl = readline.createInterface({

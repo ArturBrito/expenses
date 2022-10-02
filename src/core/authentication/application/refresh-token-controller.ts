@@ -1,5 +1,5 @@
-import { Controller, HttpResponse } from "@/libs/ddd/base-classes/controllers";
-import { badRequest, ok, serverError, unauthorized } from "@/libs/ddd/base-classes/helpers/http-helper";
+import { Controller, HttpResponse } from "@/libs/controllers";
+import { badRequest, ok, serverError, unauthorized } from "@/libs/helpers/http-helper";
 import { TokenRefresher } from "../contracts/token-refresher";
 import { Validation } from "../contracts/validation";
 
