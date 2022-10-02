@@ -18,14 +18,14 @@ model User {
 
 model Login{
   login_id  Int    @id @default(autoincrement())
-  user User @relation(fields: [user_id], references: [user_id])
+  user User @relation(fields: [user_id], references: [user_id], onDelete: Cascade)
   user_id Int  @unique
   refresh_token String @db.VarChar(200)
 }
 
 model Account{
   account_id  Int    @id @default(autoincrement())
-  user User @relation(fields: [user_id], references: [user_id])
+  user User @relation(fields: [user_id], references: [user_id], onDelete: Cascade)
   user_id Int
   account_name String @db.VarChar(50)
   balance Float @default(0.0)
@@ -34,7 +34,7 @@ model Account{
 
 model Movement{
   movement_id  Int    @id @default(autoincrement())
-  account Account @relation(fields: [account_id], references: [account_id])
+  account Account @relation(fields: [account_id], references: [account_id], onDelete: Cascade)
   account_id Int
   date DateTime   @default(now())
   value Int
