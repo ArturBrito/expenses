@@ -16,7 +16,7 @@ export class AccountPrismaRepository
     await prismaClient.account.create({
       data: {
         user_id: request.userId,
-        balance: request.balance,
+        account_balance: request.accountBalance,
         account_name: request.accountName,
       },
     });
@@ -51,7 +51,7 @@ export class AccountPrismaRepository
       return {
         accountId: account.account_id,
         accountName: account.account_name,
-        balance: account.balance,
+        accountBalance: account.account_balance,
         userId: account.user_id,
       };
     }
@@ -67,7 +67,7 @@ export class AccountPrismaRepository
         account_id: request.accountId,
       },
       data: {
-        balance: request.value,
+        account_balance: request.value,
       },
     });
 

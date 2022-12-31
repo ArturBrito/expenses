@@ -9,6 +9,7 @@ import {
   serverError,
 } from '@/libs/helpers/http-helper';
 import { AccountManager } from '../contracts/account-manager';
+import { AccountMapper } from '../domain/account-mapper';
 
 export class CreateAccountController implements Controller {
   constructor(
@@ -25,15 +26,16 @@ export class CreateAccountController implements Controller {
         return badRequest(error);
       }
 
-      const validUser = await this.getUser.get(request.userId);
+      const user = AccountMapper.toDomain(request);
+
+      const validUser = await this.getUser.get(user.userId);
 
       if (!validUser) {
         return forbidden(new AccessDeniedError());
       }
 
-      await this.accountManager.addAccount(request);
+      await this.accountManager.addAccount(user);
 
-    
       return ok('Account added');
     } catch (e) {
       console.log(e);

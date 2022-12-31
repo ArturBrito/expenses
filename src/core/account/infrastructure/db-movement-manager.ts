@@ -23,7 +23,7 @@ export class DbAddMovement implements MovementManager {
       await this.addMovementRepository
         .addMovement(request)
         .then(async (res) => {
-          request.value = account.balance + request.value;
+          request.value = account.accountBalance + request.value;
 
           movementSuc = await this.updateAccountBalanceRepository
             .update(request)

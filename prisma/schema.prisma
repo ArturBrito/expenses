@@ -28,7 +28,7 @@ model Account{
   user User @relation(fields: [user_id], references: [user_id], onDelete: Cascade)
   user_id Int
   account_name String @db.VarChar(50)
-  balance Float @default(0.0)
+  account_balance Float @default(0.0)
   movements Movement[]
 }
 

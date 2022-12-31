@@ -14,17 +14,19 @@ export class AuthMiddleware implements Middleware {
 
   async exec(request: AuthMiddleware.Request): Promise<HttpResponse> {
     try {
+      
       const { accessToken } = request;
       
       if (accessToken) {
         const decryptedToken = await this.decrypter.decrypt(accessToken);
-
+        
         if (decryptedToken) {
           return ok({ userId: decryptedToken.userId });
         }
       }
       return forbidden(new AccessDeniedError());
     } catch (error) {
+      
       if (error.message === 'jwt expired') return unauthorized();
       return serverError(error);
     }

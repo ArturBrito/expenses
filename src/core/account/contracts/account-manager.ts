@@ -12,7 +12,7 @@ export namespace AccountManager {
   export type AddRequest = {
     userId: number;
     accountName: string;
-    balance: number;
+    accountBalance: number;
   };
 
   export type GetAccountRequest = {
@@ -23,7 +23,7 @@ export namespace AccountManager {
   export type GetAccountResponse = {
     accountId: number;
     userId: number;
-    balance: number;
+    accountBalance: number;
     accountName: string;
   };
 
